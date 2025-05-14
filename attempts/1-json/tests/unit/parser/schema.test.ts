@@ -1,14 +1,17 @@
-import { describe, test, expect } from 'vitest';
+import { describe, it, expect } from 'vitest';
+import { validateTheme } from '../../../src/parser/validator';
 import { loadTheme, loadInvalidTheme } from '../../utils/fixtures';
 
 describe('Theme Schema Validation', () => {
-  test('should load a valid theme', () => {
-    // This test will fail until we create the fixture
-    expect(() => loadTheme('basic.json')).toThrow();
+  it('should validate a valid theme', async () => {
+    const theme = loadTheme('basic.json');
+    const result = await validateTheme(theme);
+    expect(result).toBe(true);
   });
 
-  test('should load an invalid theme', () => {
-    // This test will fail until we create the fixture
-    expect(() => loadInvalidTheme('malformed.json')).toThrow();
+  it('should reject an invalid theme', async () => {
+    const theme = loadInvalidTheme('malformed.json');
+    const result = await validateTheme(theme);
+    expect(result).toBe(false);
   });
 }); 
