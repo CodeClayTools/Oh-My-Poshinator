@@ -1,0 +1,23 @@
+{
+  "segments": [
+    {
+      "type": "path",
+      "style": {
+        "foreground": "not-a-color",
+        "background": "#000000"
+      }
+    },
+    {
+      "type": "git",
+      "style": {
+        "foreground": 123,
+        "background": null
+      }
+    }
+  ],
+  "style": {
+    "foreground": "#ffffff",
+    "background": "#000000",
+    "invalid_property": true
+  }
+} 

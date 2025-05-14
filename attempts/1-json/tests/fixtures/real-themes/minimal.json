@@ -1,0 +1,15 @@
+{
+  "segments": [
+    {
+      "type": "path",
+      "style": {
+        "foreground": "#ffffff",
+        "background": "#000000"
+      }
+    }
+  ],
+  "style": {
+    "foreground": "#ffffff",
+    "background": "#000000"
+  }
+} 
