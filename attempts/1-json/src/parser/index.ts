@@ -1,16 +1,15 @@
 import { Theme } from './types';
-import { validateTheme, getValidationErrors } from './validator';
+import { ThemeValidator } from './validator';
 
 export class ThemeParser {
   static async parse(json: string): Promise<Theme> {
     try {
       const theme = JSON.parse(json);
-      
-      if (!await validateTheme(theme)) {
-        const errors = getValidationErrors();
+      const validator = new ThemeValidator();
+      if (!validator.validateTheme(theme)) {
+        const errors = validator.getErrors();
         throw new Error(`Invalid theme: ${errors.join(', ')}`);
       }
-      
       return theme;
     } catch (error) {
       if (error instanceof SyntaxError) {
