@@ -16,6 +16,7 @@
   - Preset management system
 
 ### 2. Visual Editor Interface
+
 - **Canvas System**
   - Three-zone layout (left, center, right)
   - Drag-and-drop infrastructure
